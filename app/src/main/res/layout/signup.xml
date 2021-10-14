@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eeeade">
+    android:background="@color/purple_200">
 
 
     <TextView
         android:id="@+id/appname"
         android:layout_width="256dp"
         android:layout_height="48dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="200dp"
         android:fontFamily="sans-serif-thin"
-        android:text="TicketBookingApp"
-        android:textColor="#000000"
+        android:text="@string/app_name"
+        android:textColor="#ffffff"
         android:textSize="32dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,13 +24,15 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
+        android:layout_width="375dp"
+        android:layout_height="50dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/signupbox"
         android:hint="Username"
+        android:fontFamily="sans-serif-thin"
         android:padding="10dp"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,26 +40,30 @@
 
     <EditText
         android:id="@+id/EmailId"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
+        android:layout_width="375dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/signupbox"
         android:hint="Email"
+        android:fontFamily="sans-serif-thin"
+        android:inputType="textEmailAddress"
         android:padding="10dp"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
+        android:layout_width="375dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:inputType="textPassword"
         android:background="@drawable/signupbox"
         android:hint="Password"
         android:padding="10dp"
-        android:textSize="24sp"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailId" />
@@ -65,7 +72,7 @@
         android:id="@+id/registerButton"
         android:layout_width="128dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/buttons"
         android:fontFamily="sans-serif-thin"
         android:text="SignUp"
