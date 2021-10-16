@@ -9,10 +9,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-
+import com.google.firebase.database.FirebaseDatabase
 
 class Signup : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signup)
@@ -44,6 +43,7 @@ class Signup : AppCompatActivity() {
                 if(!it.isSuccessful) return@addOnCompleteListener
                 Toast.makeText(this,"Welcome "+username+"!",Toast.LENGTH_LONG).show()
                 Log.d("SignUp","${it.result?.user?.uid}")
+                savetoFirebaseatabase(username,email,password)
                 val intent= Intent(this,HomePage::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
@@ -53,4 +53,18 @@ class Signup : AppCompatActivity() {
                 Toast.makeText(this,"${it.message}",Toast.LENGTH_LONG).show()
             }
     }
+
+    private fun savetoFirebaseatabase(username:String,email:String,password:String) {
+        val uid=FirebaseAuth.getInstance().uid?: ""
+       val ref=FirebaseDatabase.getInstance().getReference("/users/$uid")
+        val user=User(username,email,password)
+        ref.setValue(user)
+            .addOnSuccessListener{
+                Log.d("SignUp","Finally we saved the user to Firebase Database")
+            }
+        }
+}
+
+class User(val Name:String,val Email:String,val Password:String){
+    constructor():this("","","")
 }
