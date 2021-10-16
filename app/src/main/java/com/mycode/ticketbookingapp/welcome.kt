@@ -83,6 +83,9 @@ class Welcome : AppCompatActivity() {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("TAG", "signInWithCredential:success")
                         val user = auth.currentUser
+                        val intent= Intent(this,HomePage::class.java)
+                        intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
                        // updateUI(user)
                     } else {
                         // If sign in fails, display a message to the user.
