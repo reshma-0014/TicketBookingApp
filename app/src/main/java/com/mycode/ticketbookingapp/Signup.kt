@@ -56,7 +56,7 @@ class Signup : AppCompatActivity() {
 
     private fun savetoFirebaseatabase(username:String,email:String,password:String) {
         val uid=FirebaseAuth.getInstance().uid?: ""
-       val ref=FirebaseDatabase.getInstance().getReference("/users/$uid")
+       val ref=FirebaseDatabase.getInstance().getReference("/User/$uid")
         val user=User(username,email,password)
         ref.setValue(user)
             .addOnSuccessListener{
