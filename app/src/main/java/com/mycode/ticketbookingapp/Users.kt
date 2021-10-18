@@ -5,8 +5,6 @@ class Users {
     var username:String?
     var profilepic:String
 
-   // var mail:kotlin.String
-   // var password:kotlin.String
 
 
     constructor(
