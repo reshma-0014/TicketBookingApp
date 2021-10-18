@@ -12,8 +12,6 @@ class Users {
         username: String?,
         profilepic: String
 
-       // mail: String,
-        //password: String,
 
     ) {
         this.email = email
