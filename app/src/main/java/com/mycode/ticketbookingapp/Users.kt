@@ -18,8 +18,7 @@ class Users {
         this.username = username
         this.profilepic = profilepic
 
-        //this.mail = mail
-        //this.password = password
+
 
     }
 
