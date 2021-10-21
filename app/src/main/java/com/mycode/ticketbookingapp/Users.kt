@@ -16,8 +16,6 @@ class Users {
         profilepic: String?,
         password:String?
 
-       // mail: String,
-        //password: String,
 
     ) {
         this.email = email
@@ -25,8 +23,7 @@ class Users {
         this.profilepic = profilepic
         this.password=password
 
-        //this.mail = mail
-        //this.password = password
+
 
     }
 
