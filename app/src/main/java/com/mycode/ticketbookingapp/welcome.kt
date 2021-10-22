@@ -88,7 +88,7 @@ class Welcome : AppCompatActivity() {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("TAG", "signInWithCredential:success")
                         val user = auth.currentUser
-                        val users = Users(user!!.email.toString(),user!!.displayName.toString(),user!!.photoUrl.toString())
+                        val users = Users(user!!.uid.toString(),user!!.email.toString(),user!!.displayName.toString(),user!!.photoUrl.toString()," ")
                         database.getReference().child("User").child(user!!.uid).setValue(users)
                         val intent= Intent(this,HomePage::class.java)
                         intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
