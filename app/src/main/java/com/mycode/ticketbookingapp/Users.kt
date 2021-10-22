@@ -1,30 +1,43 @@
 package com.mycode.ticketbookingapp
 
-class Users {
-    var email:String
-    var username:String?
-    var profilepic:String
-
-   // var mail:kotlin.String
-   // var password:kotlin.String
+import android.net.Uri
 
 
-    constructor(
-        email: String,
-        username: String?,
-        profilepic: String
+//
+//class Users{
+//    var uid:String
+//    var email:String
+//    var username:String
+//    var profilepic:String?
+//    var password:String?
+//
+//    // var mail:kotlin.String
+//   // var password:kotlin.String
+//
+//
+//    constructor(
+//        uid:String,
+//        email: String,
+//        username: String,
+//        profilepic: String?="",
+//        password:String?=""
+//
+//
+//    ) {
+//        this.uid=uid
+//        this.email = email
+//        this.username = username
+//        this.profilepic = profilepic
+//        this.password=password
+//
+//
+//
+//    }
+//
+//}
 
-       // mail: String,
-        //password: String,
 
-    ) {
-        this.email = email
-        this.username = username
-        this.profilepic = profilepic
 
-        //this.mail = mail
-        //this.password = password
-
-    }
-
+class Users(val uid:String, var email:String, var username:String, var profilepic: String?= "", val password:String?="") {
+    constructor():this("","","","")
 }

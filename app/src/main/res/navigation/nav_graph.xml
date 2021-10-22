@@ -3,26 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/home">
+
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.mycode.ticketbookingapp.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/home"
+        android:name="com.mycode.ticketbookingapp.Home"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_home_to_dashBoard"
+            app:destination="@id/dashBoard" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.mycode.ticketbookingapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/dashBoard"
+        android:name="com.mycode.ticketbookingapp.DashBoard"
+        android:label="DashBoard"
+        tools:layout="@layout/fragment_dash_board" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_dashBoard_to_foodandBeverages"
+            app:destination="@id/foodandBeverages" />
     </fragment>
+    <fragment
+        android:id="@+id/foodandBeverages"
+        android:name="com.mycode.ticketbookingapp.foodandBeverages"
+        android:label="Food  &amp; beverages"
+        tools:layout="@layout/fragment_foodand_beverages" >
+        <action
+            android:id="@+id/action_foodandBeverages_to_userprofile"
+            app:destination="@id/userprofile" />
+    </fragment>
+    <fragment
+        android:id="@+id/userprofile"
+        android:name="com.mycode.ticketbookingapp.userprofile"
+        android:label="Profile"
+        tools:layout="@layout/editprofile" />
 </navigation>
