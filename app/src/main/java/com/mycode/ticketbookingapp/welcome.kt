@@ -2,10 +2,12 @@ package com.mycode.ticketbookingapp
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.ImageDecoder
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.mycode.ticketbookingapp.databinding.ActivityWelcomeBinding
+import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.profile.*
 
 class Welcome : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
@@ -28,20 +32,20 @@ class Welcome : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       binding = ActivityWelcomeBinding.inflate(layoutInflater)
+        binding = ActivityWelcomeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(R.layout.activity_welcome)
 
         supportActionBar!!.hide()
-       auth= Firebase.auth
+        auth= Firebase.auth
         database= FirebaseDatabase.getInstance()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("122689396536-q8i8uighf5fdno6rc47gnr2kltomb38u.apps.googleusercontent.com")
                 .requestEmail()
-               .build()
+                .build()
 
-       googleSignInClient = GoogleSignIn.getClient(this, gso)
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         findViewById<Button>(R.id.btngoogle).setOnClickListener{
            signIn()
@@ -88,8 +92,9 @@ class Welcome : AppCompatActivity() {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("TAG", "signInWithCredential:success")
                         val user = auth.currentUser
-                        val users = Users(user!!.email.toString(),user!!.displayName.toString(),user!!.photoUrl.toString(),"")
+                        val users = Users(user!!.uid,user!!.email.toString(),user!!.displayName.toString(),user!!.photoUrl.toString(),"")
                         database.getReference().child("User").child(user!!.uid).setValue(users)
+
                         val intent= Intent(this,HomePage::class.java)
                         intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
