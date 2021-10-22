@@ -71,11 +71,15 @@ class userprofile : Fragment() {
                     p0.children.forEach {
                         val user = it.getValue(Users::class.java)
                         if (user != null && user.uid == FirebaseAuth.getInstance().uid) {
-                            displayname.setText(user.username)
-                            Picasso.with(context).load(user.profilepic).into(userdp1)
-                            userdp.alpha = 0f
-                            loading_spinner.visibility = View.GONE
-
+                            if (user.profilepic!="") {
+                                displayname.setText(user.username)
+                                Picasso.with(context).load(user.profilepic).into(userdp1)
+                                userdp.alpha = 0f
+                                loading_spinner.visibility = View.GONE
+                            } else {
+                                displayname.setText(user.username)
+                                loading_spinner.visibility = View.GONE
+                            }
 
                         }
                     }

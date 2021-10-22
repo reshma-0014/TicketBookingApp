@@ -40,13 +40,16 @@ class EditProfile : AppCompatActivity() {
                     p0.children.forEach {
                         val user = it.getValue(Users::class.java)
                         if (user != null && user.uid == FirebaseAuth.getInstance().uid) {
-
-                            findViewById<EditText>(R.id.name).setText(user.username)
-                            findViewById<EditText>(R.id.email).setText(user.email)
-                            Picasso.with(this@EditProfile).load(user.profilepic)
-                                .into(findViewById<CircleImageView>(R.id.userdp1))
-                            findViewById<EditText>(R.id.userdp).alpha = 0f
-
+                            if(user.profilepic!="") {
+                                findViewById<EditText>(R.id.name).setText(user.username)
+                                findViewById<EditText>(R.id.email).setText(user.email)
+                                Picasso.with(this@EditProfile).load(user.profilepic)
+                                    .into(findViewById<CircleImageView>(R.id.userdp1))
+                                findViewById<EditText>(R.id.userdp).alpha = 0f
+                            }else{
+                                findViewById<EditText>(R.id.name).setText(user.username)
+                                findViewById<EditText>(R.id.email).setText(user.email)
+                            }
                         }
 
                     }

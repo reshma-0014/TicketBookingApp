@@ -38,6 +38,6 @@ import android.net.Uri
 
 
 
-class Users(val uid:String, val email:String, val username:String, var profilepic: String?= "", val password:String?="") {
-    constructor():this("","","","")
+class Users(val uid:String, val email:String, val username:String, var profilepic: String?= null, val password:String?=null) {
+    constructor():this("","","","","")
 }
