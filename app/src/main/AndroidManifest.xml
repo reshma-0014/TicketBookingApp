@@ -21,9 +21,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Signup"></activity>
         <activity android:name=".Login"></activity>
         <activity android:name=".HomePage"></activity>
+           
+        <activity android:name=".HomePage">
+
+        </activity>
+<activity android:name=".EditProfile">
+
+</activity>
     </application>
 
 </manifest>
