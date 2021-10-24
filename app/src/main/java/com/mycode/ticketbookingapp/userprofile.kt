@@ -60,6 +60,7 @@ class userprofile : Fragment() {
                 it.startActivity(intent)
             }
         }
+
         // return rootView
 
         rootView.settings.setOnClickListener {
