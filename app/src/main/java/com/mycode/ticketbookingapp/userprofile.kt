@@ -61,6 +61,15 @@ class userprofile : Fragment() {
             }
         }
 
+        // return rootView
+
+        rootView.settings.setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, SettingsActivity::class.java)
+                it.startActivity(intent)
+            }
+        }
+       // return rootView
 
 
         activity?.runOnUiThread {
