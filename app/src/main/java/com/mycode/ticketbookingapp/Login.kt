@@ -44,10 +44,9 @@ class Login : AppCompatActivity() {
                 Toast.makeText(this,"Logged Successfully",Toast.LENGTH_LONG).show()
                 Log.d("Login","${it.result?.user?.uid}")
                 val intent= Intent(this,HomePage::class.java)
-                intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
-
-
+                finish()
             }
 
             .addOnFailureListener{

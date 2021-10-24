@@ -91,8 +91,9 @@ class Welcome : AppCompatActivity() {
                         val users = Users(user!!.uid.toString(),user!!.email.toString(),user!!.displayName.toString(),user!!.photoUrl.toString(),null)
                         database.getReference().child("User").child(user!!.uid).setValue(users)
                         val intent= Intent(this,HomePage::class.java)
-                        intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                        intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
+                        finish()
                        // updateUI(user)
                     } else {
                         // If sign in fails, display a message to the user.

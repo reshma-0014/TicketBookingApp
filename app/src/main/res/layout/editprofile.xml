@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
+        android:id="@+id/editframe"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,8 +17,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="24dp"
-            android:cursorVisible="false"
             android:background="@drawable/ic_account"
+            android:cursorVisible="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="75dp"
             android:layout_height="30dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:padding="2dp"
             android:text="Name"
             android:textSize="16sp"
@@ -50,28 +50,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userdp" />
 
+
         <EditText
             android:id="@+id/name"
             android:layout_width="381dp"
             android:layout_height="38dp"
-            android:paddingLeft="5dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/signupbox"
             android:inputType="text"
+            android:paddingLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userdp" />
 
-
         <EditText
             android:id="@+id/email"
-            android:paddingLeft="5dp"
             android:layout_width="381dp"
             android:layout_height="38dp"
             android:layout_marginTop="48dp"
             android:background="@drawable/signupbox"
             android:inputType="textEmailAddress"
+            android:paddingLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,6 +97,7 @@
             android:layout_marginTop="48dp"
             android:background="@drawable/signupbox"
             android:inputType="text"
+            android:paddingLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
@@ -145,12 +146,13 @@
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/mobileno"
             android:layout_width="381dp"
             android:layout_height="38dp"
             android:layout_marginTop="96dp"
             android:background="@drawable/signupbox"
             android:inputType="phone"
+            android:paddingLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/location" />
@@ -167,20 +169,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@id/mobileno" />
 
-        <EditText
-
-            android:id="@+id/editText4"
+        <TextView
+            android:onClick="Click"
+            android:id="@+id/birthday"
             android:layout_width="381dp"
             android:layout_height="38dp"
             android:layout_marginTop="48dp"
             android:background="@drawable/signupbox"
             android:hint=" DD/MM/YY "
-            android:inputType="date"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:cursorVisible="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@id/mobileno" />
 
         <TextView
             android:layout_width="75dp"
@@ -193,29 +198,42 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.044"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+            app:layout_constraintTop_toBottomOf="@id/birthday" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/gender"
             android:layout_width="381dp"
             android:layout_height="38dp"
             android:layout_marginTop="48dp"
             android:background="@drawable/signupbox"
-            android:inputType="date"
+            android:inputType="text"
+            android:paddingLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+            app:layout_constraintTop_toBottomOf="@id/birthday" />
 
         <Button
             android:id="@+id/savechanges"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_margin="16dp"
             android:text="Save changes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+            app:layout_constraintTop_toBottomOf="@id/gender">
+        </Button>
+
+        <ProgressBar
+            android:id="@+id/loading_spinner"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
