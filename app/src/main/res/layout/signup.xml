@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200">
+    android:background="@color/DuskyWhite">
 
 
     <TextView
@@ -23,15 +23,17 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/signupbox"
         android:fontFamily="sans-serif"
         android:hint="Username"
         android:inputType="text"
-        android:padding="10dp"
+        android:layout_margin="16dp"
         android:textSize="20sp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,12 +41,14 @@
 
     <EditText
         android:id="@+id/EmailId"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_weight="1"
         android:layout_marginTop="16dp"
         android:background="@drawable/signupbox"
         android:fontFamily="sans-serif"
         android:hint="Email"
+        android:layout_margin="16dp"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         android:textSize="20sp"
@@ -54,12 +58,14 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="375dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/signupbox"
         android:fontFamily="sans-serif"
         android:hint="Password"
+        android:layout_margin="16dp"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textSize="20sp"
