@@ -120,7 +120,12 @@ class userprofile : Fragment() {
                 it.startActivity(intent)
             }
         }
-
+         rootView.accountsettings.setOnClickListener{
+             activity?.let{
+                 val intent = Intent(it, SettingsActivity::class.java)
+                 it.startActivity(intent)
+             }
+         }
             rootView.logout.setOnClickListener {
                 activity?.let {
                     Firebase.auth.signOut()
