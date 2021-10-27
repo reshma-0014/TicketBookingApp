@@ -93,7 +93,6 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/ic_baseline_navigate_next_24"
         android:padding="8dp"
-        android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.989"
         app:layout_constraintStart_toStartOf="@+id/settings1"
