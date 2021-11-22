@@ -17,7 +17,7 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
-
+        supportActionBar!!.hide()
         findViewById<Button>(R.id.Login).setOnClickListener{
             performLogin()
         }
@@ -54,6 +54,13 @@ class Login : AppCompatActivity() {
             }
 
 
+    }
+
+    @Override
+    override fun onBackPressed() {
+        val intent = Intent(this@Login, Welcome::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }

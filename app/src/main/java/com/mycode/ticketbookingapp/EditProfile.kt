@@ -2,6 +2,8 @@ package com.mycode.ticketbookingapp
 
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -30,7 +32,7 @@ class EditProfile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.editprofile)
-
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#F3FFDE07")))
         findViewById<ProgressBar>(R.id.loading_spinner).visibility = View.GONE
         findViewById<EditText>(R.id.userdp).setShowSoftInputOnFocus(false)
 

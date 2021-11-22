@@ -8,12 +8,12 @@
         android:title="Home"/>
     <item
         android:id="@+id/dashBoard"
-        android:icon="@drawable/ic_baseline_dashboard_24"
-        android:title="DashBoard"/>
+        android:icon="@drawable/ic_baseline_local_movies_24"
+        android:title="Theatres"/>
     <item
         android:id="@+id/foodandBeverages"
-        android:icon="@drawable/ic_food"
-        android:title="Food &amp; Beveages"/>
+        android:icon="@drawable/ic_baseline_movie_24"
+        android:title="Stream movies"/>
     <item
         android:id="@+id/userprofile"
         android:icon="@drawable/ic_account"

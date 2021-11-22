@@ -15,7 +15,7 @@ class Signup : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signup)
-
+        supportActionBar!!.hide()
         findViewById<Button>(R.id.Signup).setOnClickListener{
             performSignup()
         }
@@ -63,6 +63,12 @@ class Signup : AppCompatActivity() {
                 Log.d("SignUp","Finally we saved the user to Firebase Database")
             }
         }
+    @Override
+    override fun onBackPressed() {
+        val intent = Intent(this@Signup, Welcome::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
 
 class User(val Name:String,val Email:String,val Password:String){
