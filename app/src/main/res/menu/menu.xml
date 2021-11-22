@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-   <item
-       android:id="@+id/ic_baseline_dashboard"
-       android:icon="@drawable/ic_baseline_dashboard_24"
-       android:title="dashboard"/>
-    <item
-        android:id="@+id/ic_account"
-        android:icon="@drawable/ic_account"
-        android:title="account"/>
-    <item
-        android:id="@+id/ic_food"
-        android:icon="@drawable/ic_food"
-        android:title="food"/>
-    <item
-        android:id="@+id/ic_home"
-        android:icon="@drawable/ic_home"
-        android:title="home"/>
 
     <item
         android:id="@+id/home"
@@ -24,12 +8,12 @@
         android:title="Home"/>
     <item
         android:id="@+id/dashBoard"
-        android:icon="@drawable/ic_baseline_dashboard_24"
-        android:title="DashBoard"/>
+        android:icon="@drawable/ic_baseline_local_movies_24"
+        android:title="Theatres"/>
     <item
         android:id="@+id/foodandBeverages"
-        android:icon="@drawable/ic_food"
-        android:title="Food &amp; Beveages"/>
+        android:icon="@drawable/ic_baseline_movie_24"
+        android:title="Stream movies"/>
     <item
         android:id="@+id/userprofile"
         android:icon="@drawable/ic_account"

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mycode.ticketbookingapp">
+<!--    <compatible-screens>-->
+<!--        &lt;!&ndash; all small size screens &ndash;&gt;-->
+<!--        <screen android:screenSize="small" android:screenDensity="ldpi" />-->
+<!--        <screen android:screenSize="small" android:screenDensity="mdpi" />-->
+<!--        <screen android:screenSize="small" android:screenDensity="hdpi" />-->
+<!--        <screen android:screenSize="small" android:screenDensity="xhdpi" />-->
+<!--        &lt;!&ndash; all normal size screens &ndash;&gt;-->
+<!--        <screen android:screenSize="normal" android:screenDensity="ldpi" />-->
+<!--        <screen android:screenSize="normal" android:screenDensity="mdpi" />-->
+<!--        <screen android:screenSize="normal" android:screenDensity="hdpi" />-->
+<!--        <screen android:screenSize="normal" android:screenDensity="xhdpi" />-->
+<!--    </compatible-screens>-->
+
 
     <application
         android:allowBackup="true"
@@ -8,31 +21,52 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:resizeableActivity="true"
         android:theme="@style/Theme.TicketBookingApp">
-        <activity android:name=".feedback">
-        </activity>
-        <activity android:name=".SettingsActivity">
 
-        </activity>
+
         <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-            <activity android:name=".Login">
-
-            </activity>
-        <activity android:name=".HomePage">
+        <activity android:name=".Signup">
 
         </activity>
-<activity android:name=".EditProfile">
 
-</activity>
+        <activity android:name=".Login">
 
-        <activity android:name=".Signup"></activity>
+        </activity>
+
+        <activity android:name=".HomePage">
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".EditProfile">
+        </activity>
+
+        <activity android:name=".feedback">
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SettingsActivity" />
+
+
+        </activity>
+        <activity android:name=".SettingsActivity">
+
+
+        </activity>
+        <activity android:name=".genre">
+
+        </activity>
 
     </application>
 

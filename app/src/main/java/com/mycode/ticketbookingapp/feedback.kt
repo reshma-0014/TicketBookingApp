@@ -1,5 +1,6 @@
 package com.mycode.ticketbookingapp
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +24,7 @@ class feedback : AppCompatActivity() {
         findViewById<Button>(R.id.btn_feedback).setOnClickListener{
             sendfeedback()
             val intent= Intent(this,SettingsActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+//            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
     }

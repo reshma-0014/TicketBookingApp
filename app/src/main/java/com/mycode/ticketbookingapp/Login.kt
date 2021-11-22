@@ -17,7 +17,7 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
-
+        supportActionBar!!.hide()
         findViewById<Button>(R.id.Login).setOnClickListener{
             performLogin()
         }
@@ -44,10 +44,9 @@ class Login : AppCompatActivity() {
                 Toast.makeText(this,"Logged Successfully",Toast.LENGTH_LONG).show()
                 Log.d("Login","${it.result?.user?.uid}")
                 val intent= Intent(this,HomePage::class.java)
-                intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                intent.flags= Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
-
-
+                finish()
             }
 
             .addOnFailureListener{
@@ -55,6 +54,13 @@ class Login : AppCompatActivity() {
             }
 
 
+    }
+
+    @Override
+    override fun onBackPressed() {
+        val intent = Intent(this@Login, Welcome::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }
